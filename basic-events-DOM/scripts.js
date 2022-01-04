@@ -12,8 +12,19 @@ let blueQuote = document.createElement('p');
     blueQuote.style.textAlign = 'center';
 let mouseOverDiv = document.getElementById('mouseOverText');
 let title = document.getElementById('heading');
-
-// --------blue button =>------------
+let topContainer = document.getElementById('headingContainer');
+let blueChoiceText = document.createElement('p');
+    blueChoiceText.textContent = 'to live in a construct by taking the...';
+    blueChoiceText.style.fontSize = 'xx-large';
+    blueChoiceText.style.color = 'white';
+    blueChoiceText.style.textAlign = 'center';
+let redChoiceText = document.createElement('p');
+    redChoiceText.textContent = 'to live in reality by taking the...';
+    redChoiceText.style.fontSize = 'xx-large';
+    redChoiceText.style.color = 'white';
+    redChoiceText.style.textAlign = 'center';
+    
+// --------blue button ------------
 blueButton.onmouseover = () => {
     mouseOverDiv.appendChild(blueQuote);
     blueQuote.style.fontFamily = 'Cormorant', serif;
@@ -28,11 +39,12 @@ blueButton.addEventListener('click', () => {
     blueButton.onmouseover = () => {
         mouseOverDiv.removeChild(blueQuote);
     }
-    //change the title
-    //add another - with text content
+    title.innerHTML = 'You Chose';
+    topContainer.appendChild(blueChoiceText);
+    blueChoiceText.style.fontFamily = 'Cormorant', serif;
 })
 
-// ----------red button =>----------------
+// ----------red button ----------------
 redButton.onmouseover = () => {
     mouseOverDiv.appendChild(redQuote);
     redQuote.style.fontFamily = 'Cormorant', serif;
@@ -47,6 +59,9 @@ redButton.addEventListener('click', () => {
     redButton.onmouseover = () => {
         buttonContainer.removeChild(redQuote);
     }
+    title.innerHTML = 'You Chose'
+    topContainer.appendChild(redChoiceText);
+    redChoiceText.style.fontFamily = 'Cormorant', serif;
 })
 
 // sample conditional 
